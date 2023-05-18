@@ -1,0 +1,29 @@
+.friends {
+    padding-top: 25px;
+}
+
+.title {
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+.body {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.friendsItem {
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.name {
+    color: #fff;
+    text-align: center;
+}
