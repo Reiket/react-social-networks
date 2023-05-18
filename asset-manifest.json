@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/reiket/react-social-networks/static/css/main.131060d0.css",
+    "main.js": "/reiket/react-social-networks/static/js/main.e9cc273d.js",
+    "static/css/647.521f4f5f.chunk.css": "/reiket/react-social-networks/static/css/647.521f4f5f.chunk.css",
+    "static/js/647.1b8464b4.chunk.js": "/reiket/react-social-networks/static/js/647.1b8464b4.chunk.js",
+    "static/css/672.3257f22c.chunk.css": "/reiket/react-social-networks/static/css/672.3257f22c.chunk.css",
+    "static/js/672.f980da50.chunk.js": "/reiket/react-social-networks/static/js/672.f980da50.chunk.js",
+    "static/css/677.d2f5b31f.chunk.css": "/reiket/react-social-networks/static/css/677.d2f5b31f.chunk.css",
+    "static/js/677.822decd4.chunk.js": "/reiket/react-social-networks/static/js/677.822decd4.chunk.js",
+    "static/js/120.3fde2dd3.chunk.js": "/reiket/react-social-networks/static/js/120.3fde2dd3.chunk.js",
+    "static/css/797.392b1193.chunk.css": "/reiket/react-social-networks/static/css/797.392b1193.chunk.css",
+    "static/js/797.d886eb07.chunk.js": "/reiket/react-social-networks/static/js/797.d886eb07.chunk.js",
+    "static/js/940.0e971fad.chunk.js": "/reiket/react-social-networks/static/js/940.0e971fad.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/reiket/react-social-networks/static/js/787.28cb0dcd.chunk.js",
+    "static/js/615.a08c5e9d.chunk.js": "/reiket/react-social-networks/static/js/615.a08c5e9d.chunk.js",
+    "static/media/loading.svg": "/reiket/react-social-networks/static/media/loading.b767aab46ea3fa309aff5e12d5006915.svg",
+    "index.html": "/reiket/react-social-networks/index.html",
+    "main.131060d0.css.map": "/reiket/react-social-networks/static/css/main.131060d0.css.map",
+    "main.e9cc273d.js.map": "/reiket/react-social-networks/static/js/main.e9cc273d.js.map",
+    "647.521f4f5f.chunk.css.map": "/reiket/react-social-networks/static/css/647.521f4f5f.chunk.css.map",
+    "647.1b8464b4.chunk.js.map": "/reiket/react-social-networks/static/js/647.1b8464b4.chunk.js.map",
+    "672.3257f22c.chunk.css.map": "/reiket/react-social-networks/static/css/672.3257f22c.chunk.css.map",
+    "672.f980da50.chunk.js.map": "/reiket/react-social-networks/static/js/672.f980da50.chunk.js.map",
+    "677.d2f5b31f.chunk.css.map": "/reiket/react-social-networks/static/css/677.d2f5b31f.chunk.css.map",
+    "677.822decd4.chunk.js.map": "/reiket/react-social-networks/static/js/677.822decd4.chunk.js.map",
+    "120.3fde2dd3.chunk.js.map": "/reiket/react-social-networks/static/js/120.3fde2dd3.chunk.js.map",
+    "797.392b1193.chunk.css.map": "/reiket/react-social-networks/static/css/797.392b1193.chunk.css.map",
+    "797.d886eb07.chunk.js.map": "/reiket/react-social-networks/static/js/797.d886eb07.chunk.js.map",
+    "940.0e971fad.chunk.js.map": "/reiket/react-social-networks/static/js/940.0e971fad.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/reiket/react-social-networks/static/js/787.28cb0dcd.chunk.js.map",
+    "615.a08c5e9d.chunk.js.map": "/reiket/react-social-networks/static/js/615.a08c5e9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.131060d0.css",
+    "static/js/main.e9cc273d.js"
+  ]
+}
