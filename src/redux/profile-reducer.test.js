@@ -1,5 +1,4 @@
 import profileReducer, { addPost } from "./profile-reducer";
-import { render, screen } from '@testing-library/react';
 
 
 test('new post should be added', () => {

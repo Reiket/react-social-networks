@@ -28,6 +28,20 @@ export const profileAPI = {
         return instanse.get(`profile/${userId}`)
             .then(response=> response.data);
     },
+    saveProfile(profile) {
+        return instanse.put(`profile`, profile)
+            .then(response=> response.data);
+    },
+    savePhoto(photoFile) {
+        const formData = new FormData();
+        formData.append('image', photoFile)
+        return instanse.put(`profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        })
+            .then(response=> response.data);
+    },
     // getProfileImg() {
     //     return instanse.get(`profile/10`)
     //         .then(response => response.data)
@@ -47,8 +61,8 @@ export const authAPI = {
         return instanse.get(`auth/me`)
             .then(response => response.data);
     },
-    login(email, password, rememberMe = false) {
-        return instanse.post(`auth/login`, {email, password, rememberMe})
+    login(email, password, rememberMe = false, captcha = null) {
+        return instanse.post(`auth/login`, {email, password, rememberMe, captcha})
         .then(response => response.data);
     },
     logout() {
@@ -56,6 +70,12 @@ export const authAPI = {
         .then(response => response.data);
     },
     captcha() {
+        return instanse.get(`security/get-captcha-url`)
+        .then(response => response.data);
+    },
+};
+export const securityAPI = {
+    getCaptchaUrl() {
         return instanse.get(`security/get-captcha-url`)
         .then(response => response.data);
     },
