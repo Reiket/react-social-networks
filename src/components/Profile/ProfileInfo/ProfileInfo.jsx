@@ -4,34 +4,34 @@ import React from "react";
 import ProfileStatus from './ProfileStatus';
 import avatarPhoto from '../../../assets/images/avatar.jpg';
 import ProfileDataForm from "./ProfileDataForm";
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, saveProfile, savePhoto, isOwner, status, updateUserStatus}) => {
     const [editMode, setEditMode] = React.useState(false)
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader />
     }
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
-            props.savePhoto(e.target.files[0]);
+            savePhoto(e.target.files[0]);
         }
     }
     const goToEditMode =() => {
         setEditMode(prev => !prev)
     }
     const onSubmit = (formData) => {
-        props.saveProfile(formData).then(() => {
+        saveProfile(formData).then(() => {
             setEditMode(false);
         });
     }
     return (
         <div>
             <div className={s.profileContent__image}>
-                <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" />
+                <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="LandScape"/>
             </div>
             <div>
-                <img src={props.profile.photos.small || avatarPhoto} />
-                {props.isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
-                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
-                {editMode ? <ProfileDataForm initialValues={props.profile} onSubmit={onSubmit} profile={props.profile}/> : <ProfileData profile={props.profile} isOwner={props.isOwner} goToEditMode={goToEditMode}/>}
+                <img src={profile.photos.small || avatarPhoto} alt="avatarPhoto"/>
+                {isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+                <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
+                {editMode ? <ProfileDataForm initialValues={profile} onSubmit={onSubmit} profile={profile}/> : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={goToEditMode}/>}
             </div>
         </div>
     );

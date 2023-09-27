@@ -5,18 +5,18 @@ import s from './ProfileInfo.module.css';
 import style from "../../common/FormsControls/FormControl.module.css";
 
 
-const ProfileDataForm = (props) => {
-    return <form onSubmit={props.handleSubmit}>
+const ProfileDataForm = ({handleSubmit, error, profile, onSubmit, initialValues}) => {
+    return <form onSubmit={handleSubmit}>
         <div><button>save</button></div>
-        {props.error && <div className={style.formSummaryError}>
-            {props.error}
+        {error && <div className={style.formSummaryError}>
+            {error}
         </div>}
         <div><b>Full name:</b> {<Field validate={[]} placeholder={"Full-name"} name={"FullName"} component={Input}/>}</div>
         <div><b>Looking for a job:</b> {<Field validate={[]} name={"lookingForAJob"} component={Input} type={"checkbox"}/>}</div>
         <div><b>My professional skills:</b>{<Field validate={[]} placeholder={"My professional skills"} name={"lookingForAJobDescription"} component={Textarea}/>}</div>
         <div><b>About me:</b> {<Field validate={[]} placeholder={"About me"} name={"AboutMe"} component={Input}/>}</div>
         <div>
-            <b>Contacts:</b>{Object.keys(props.profile.contacts).map(key => {
+            <b>Contacts:</b>{Object.keys(profile.contacts).map(key => {
             return <div key={key} className={s.contact}>
                 <b>{key}: {<Field validate={[]} placeholder={key} name={`contacts.${key}`} component={Input}/>}</b>
             </div>

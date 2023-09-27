@@ -6,7 +6,6 @@ import { maxLengthCreator, requiredField } from '../../../utils/validators/valid
 import { Textarea } from '../../common/FormsControls/FormsControl';
 const maxLength10 = maxLengthCreator(5);
 const MyPosts = React.memo(props => {
-    let postsElements = props.posts.map((post) => <Post message={post.message} likeCount={post.likesCount} />);
     let onPostChange = (values) => {
         props.addPost(values.newPostText);
     }
@@ -17,7 +16,7 @@ const MyPosts = React.memo(props => {
                 <AddPostReduxForm onSubmit={onPostChange}/>
             </div>
             <div className={s.posts}>
-                {postsElements};
+                {props.posts.map((post, index) => <Post key={index} message={post.message} likeCount={post.likesCount} />)}
             </div>
         </div>
     );

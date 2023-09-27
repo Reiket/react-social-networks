@@ -5,20 +5,18 @@ import Message from "./Message/Message";
 import { Field, reduxForm } from 'redux-form';
 import { Textarea } from '../common/FormsControls/FormsControl';
 import { maxLengthCreator, requiredField } from '../../utils/validators/validator';
-const Dialogs = (props) => {
-    let state = props.dialogsPage;
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} avatar= {d.avatar} />);
-    let messagesElements = state.messages.map(m => <Message message={m.message} />);
+const Dialogs = ({dialogsPage, sendMessage}) => {
     let onAddMessage = (values) => {
-        props.sendMessage(values.newMassageBody);
+        sendMessage(values.newMassageBody);
+        values.newMassageBody = '';
     }
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsElements}
+                {dialogsPage.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} avatar= {d.avatar} />)}
             </div>
             <div className={s.messages}>
-                <div>{messagesElements}</div>
+                <div>{dialogsPage.messages.map((m, index) => <Message key={index} message={m.message} />)}</div>
                 <div>
                     <AddMessageReduxForm onSubmit={onAddMessage}/>
                 </div>

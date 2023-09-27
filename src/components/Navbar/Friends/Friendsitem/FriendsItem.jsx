@@ -1,9 +1,9 @@
 import s from './../Friends.module.css';
-const FriendsItem = (props) => {
+const FriendsItem = ({avatar, name}) => {
     return (
         <div className={s.friendsItem}>
-            <img className={s.avatar} src={props.avatar} alt="" />
-            <div className={s.name}>{props.name}</div>
+            <img className={s.avatar} src={avatar} alt="Avatar" />
+            <div className={s.name}>{name}</div>
         </div>
     );
 }

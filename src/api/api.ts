@@ -1,4 +1,6 @@
 import axios from "axios";
+import {ProfileType} from "~/src/types/types";
+import {type} from "@testing-library/user-event/dist/type";
 
 const instanse = axios.create({
     withCredentials: true,
@@ -14,25 +16,25 @@ export const userAPI = {
     }
 }
 export const followAPI = {
-    deleteFollow(id) {
+    deleteFollow(id: number) {
         return instanse.delete(`follow/${id}`)
             .then(response => response.data);
     },
-    postFollow(id) {
+    postFollow(id: number) {
         return instanse.post(`follow/${id}`)
         .then(response => response.data);
     },
 }
 export const profileAPI = {
-    getProfile(userId) {
+    getProfile(userId: number) {
         return instanse.get(`profile/${userId}`)
             .then(response=> response.data);
     },
-    saveProfile(profile) {
+    saveProfile(profile: ProfileType) {
         return instanse.put(`profile`, profile)
             .then(response=> response.data);
     },
-    savePhoto(photoFile) {
+    savePhoto(photoFile: any) {
         const formData = new FormData();
         formData.append('image', photoFile)
         return instanse.put(`profile/photo`, formData, {
@@ -42,27 +44,48 @@ export const profileAPI = {
         })
             .then(response=> response.data);
     },
-    // getProfileImg() {
-    //     return instanse.get(`profile/10`)
-    //         .then(response => response.data)
-    // },
-    getStatus(userId) {
+    getStatus(userId: number) {
         return instanse.get(`profile/status/` + userId)
             .then(response=> response.data);
     },
-    updateStatus(status) {
+    updateStatus(status: string) {
         return instanse.put(`profile/status/`, {status})
             .then(response=> response.data);
     },
 }
+export enum ResultCodesEnum {
+    Success = 0,
+    Error = 1,
+
+}
+export enum ResultCodeForCaptcha {
+    CaptchaIsRequired = 10,
+
+}
+type MeResponseType = {
+    data: {
+        id: number
+        email: string
+        login: string
+    }
+    resultCode: ResultCodesEnum
+    messages: Array<string>
+}
+type LoginResponseType = {
+    data: {
+        userId: number
+    }
+    resultCode: ResultCodesEnum | ResultCodeForCaptcha
+    messages: Array<string>
+}
 
 export const authAPI = {
     checkAuth() {
-        return instanse.get(`auth/me`)
+        return instanse.get<MeResponseType>(`auth/me`)
             .then(response => response.data);
     },
-    login(email, password, rememberMe = false, captcha = null) {
-        return instanse.post(`auth/login`, {email, password, rememberMe, captcha})
+    login(email: string, password: string, rememberMe = false, captcha: null | string = null) {
+        return instanse.post<LoginResponseType>(`auth/login`, {email, password, rememberMe, captcha})
         .then(response => response.data);
     },
     logout() {

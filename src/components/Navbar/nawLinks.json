@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Profile",
+    "url": "/profile"
+  },
+  {
+    "name": "Messages",
+    "url": "/dialogs"
+  },
+  {
+    "name": "News",
+    "url": "/news"
+  },
+  {
+    "name": "Users",
+    "url": "/users"
+  }, {
+    "name": "Music",
+    "url": "/music"
+  }
+]
